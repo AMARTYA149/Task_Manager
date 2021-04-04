@@ -33,7 +33,10 @@ export class TaskViewComponent implements OnInit {
   onTaskClick(task: Task) {
     //we want to set the task to complete
     this.taskService.complete(task).subscribe(() => {
+      // the task has been set to completed successfully
       console.log('completed success');
+
+      task.completed = !task.completed;
     });
   }
 }
